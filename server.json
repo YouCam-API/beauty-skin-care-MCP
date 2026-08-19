@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.makeupar/beauty",
+  "title": "YouCam for Beauty & Personal Care",
+  "description": "Provides YouCam API for skin, face & body analysis, beauty/makeup try-on, and hair & beard styling.",
+  "version": "1.0.1",
+  "websiteUrl": "https://yce.perfectcorp.com/ai-api",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp-api-01.makeupar.com/mcp/beauty",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Include your API key in the request header using Bearer Token.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
