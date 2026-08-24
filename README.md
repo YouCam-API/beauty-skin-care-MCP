@@ -1,9 +1,9 @@
-![YouCam MCP for Beauty &amp; Personal Care](assets/banner-beauty.png)
+![YouCam MCP for Beauty &amp; Skin Care](assets/banner-beauty.png)
 
 [![CONSOLE](https://img.shields.io/badge/YOUCAM-3183FF?style=for-the-badge)](https://yce.perfectcorp.com/api-console/)
 [![DOCUMENT](https://img.shields.io/badge/DOCUMENT-FF2D78?style=for-the-badge)](https://docs.perfectcorp.com/develop/mcp.md)
 
-Official Perfect Corp [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) server for beauty and personal care AI. This server lets MCP clients like [Claude Desktop](https://claude.ai/download), [Cursor](https://www.cursor.com), [Github Copilot](https://github.com/features/copilot), [Codex](https://openai.com/codex) and others analyse skin and hair, try on makeup, hairstyles and nails, refine facial features, and simulate body and aging changes — all from a single photo.
+Official Perfect Corp [Model Context Protocol (MCP)](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro) server for beauty and skin care AI. This server lets MCP clients like [Claude Desktop](https://claude.ai/download), [Cursor](https://www.cursor.com), [Github Copilot](https://github.com/features/copilot), [Codex](https://openai.com/codex) and others analyse skin and hair, try on makeup, hairstyles and nails, refine facial features, and simulate body and aging changes — all from a single photo.
 
 The client handles request formatting, authentication and asynchronous polling. You add one entry to a config file and start prompting.
 
