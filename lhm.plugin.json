@@ -319,6 +319,175 @@
       }
     },
     {
+      "name": "AI-Nail-Transfer",
+      "title": "Ai Nail Transfer",
+      "description": "AI Nail Transfer API is a powerful generative AI solution for virtual nail try-on experiences. Powered by YouCam API’s advanced AI models and image transformation technology, users can instantly transfer any desired nail design from a reference photo onto their own hand with remarkable realism and precision.\nFrom gel nails, nail art, and polish finishes to intricate embellishments such as glitter, shell accents, and metallic textures, the AI accurately recreates a wide range of nail styles in a natural, high-definition virtual preview. This enables consumers to explore and visualize designs with confidence before making a purchase.\nFor beauty brands, salons, and nail artists, AI Nail Transfer API provides a fast and engaging way to showcase nail designs to clients, helping increase customer engagement, improve satisfaction, and drive higher conversion rates through immersive virtual experiences.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "anyOf": [
+              {
+                "properties": {
+                  "src_file_url": {
+                    "description": "Url of the file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/selfie.jpg"
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_url": {
+                    "description": "Url of the reference file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/reference.jpg"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_url",
+                  "ref_file_url"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "src_file_url": {
+                    "description": "Url of the file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/selfie.jpg"
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_id": {
+                    "description": "ID of the reference file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_url",
+                  "ref_file_id"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "src_file_id": {
+                    "description": "ID of file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_url": {
+                    "description": "Url of the reference file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/reference.jpg"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_id",
+                  "ref_file_url"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "src_file_id": {
+                    "description": "ID of file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_id": {
+                    "description": "ID of the reference file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_id",
+                  "ref_file_id"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "polling": {
+            "default": true,
+            "description": "If true (default), keep polling until the task finishes, returning the final result. If false, return immediately without waiting for the task to finish.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "error_message": {
+                    "description": "Detailed description of error",
+                    "type": "string"
+                  },
+                  "request_id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "error_message"
+                ],
+                "type": "object"
+              }
+            ]
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "x-fastmcp-wrap-result": true
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "openWorldHint": true
+      },
+      "_meta": {
+        "fastmcp": {
+          "versions": [
+            "v2.0"
+          ],
+          "tags": [],
+          "version": "v2.0"
+        }
+      }
+    },
+    {
       "name": "AI-Smile",
       "title": "Ai Smile",
       "description": "Introducing Generative AI Smile API, the easy way to turn that frown upside down. This convenient AI smile generator transforms sad or neutral facial expressions into happy, natural looking smiles in just moments. Powered by advanced generative AI, it helps bring warmth and positivity to any photo with a simple and effortless process. Upload an image, let the AI work its magic, and instantly convert your sad face into a cheerful smiley face that spreads happiness everywhere it's shared.\nThe AI Smile generator supports two distinct smile styles, giving users more control over the final expression.\n1.  **smile_with_teeth_visible**  \n    This option creates a bright, joyful smile with naturally visible teeth. It is ideal for upbeat portraits, social media photos, and situations where a warm and expressive look is desired.\n2.  **closed_mouth_smile**  \n    This option produces a subtle, gentle smile with lips closed. It works well for professional photos, formal profiles, or when a calm and natural expression is preferred.\nUsers can easily choose the smile type that best matches their photo, mood, or intended use, ensuring realistic and appealing results every time.\nWhether you're editing photos, creating fun content, or simply want to add a touch of positivity, Generative AI Smile makes it easy to spread happiness, one smile at a time.\nUpload a face. Click once. Smile instantly.",
@@ -679,6 +848,23 @@
                           0
                         ]
                       },
+                      "breast": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`breast_left` / `breast_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
+                        "examples": [
+                          0
+                        ]
+                      },
                       "breast_left": {
                         "anyOf": [
                           {
@@ -759,6 +945,23 @@
                           0
                         ]
                       },
+                      "neck": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": 0,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`neck_left` / `neck_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
+                        "examples": [
+                          0
+                        ]
+                      },
                       "neck_left": {
                         "anyOf": [
                           {
@@ -791,6 +994,23 @@
                           0
                         ]
                       },
+                      "shoulder": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`shoulder_left` / `shoulder_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
+                        "examples": [
+                          0
+                        ]
+                      },
                       "shoulder_left": {
                         "anyOf": [
                           {
@@ -819,6 +1039,23 @@
                           }
                         ],
                         "default": null,
+                        "examples": [
+                          0
+                        ]
+                      },
+                      "squared_shoulder": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`squared_shoulder_left` / `squared_shoulder_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
                         "examples": [
                           0
                         ]
@@ -980,6 +1217,23 @@
                           0
                         ]
                       },
+                      "breast": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`breast_left` / `breast_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
+                        "examples": [
+                          0
+                        ]
+                      },
                       "breast_left": {
                         "anyOf": [
                           {
@@ -1060,6 +1314,23 @@
                           0
                         ]
                       },
+                      "neck": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": 0,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`neck_left` / `neck_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
+                        "examples": [
+                          0
+                        ]
+                      },
                       "neck_left": {
                         "anyOf": [
                           {
@@ -1092,6 +1363,23 @@
                           0
                         ]
                       },
+                      "shoulder": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`shoulder_left` / `shoulder_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
+                        "examples": [
+                          0
+                        ]
+                      },
                       "shoulder_left": {
                         "anyOf": [
                           {
@@ -1120,6 +1408,23 @@
                           }
                         ],
                         "default": null,
+                        "examples": [
+                          0
+                        ]
+                      },
+                      "squared_shoulder": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "number"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides. A per-side key (`squared_shoulder_left` / `squared_shoulder_right`) overrides this value for that side; a per-side `0` means that side is left unchanged.",
                         "examples": [
                           0
                         ]
@@ -2253,6 +2558,7 @@
                   "features": {
                     "anyOf": [
                       {
+                        "additionalProperties": false,
                         "properties": {
                           "eye_bag": {
                             "anyOf": [
@@ -2421,6 +2727,7 @@
                     "default": "custom"
                   },
                   "features": {
+                    "additionalProperties": false,
                     "properties": {
                       "eye_bag": {
                         "anyOf": [
@@ -2586,6 +2893,7 @@
                   "features": {
                     "anyOf": [
                       {
+                        "additionalProperties": false,
                         "properties": {
                           "eye_bag": {
                             "anyOf": [
@@ -2754,6 +3062,7 @@
                     "default": "custom"
                   },
                   "features": {
+                    "additionalProperties": false,
                     "properties": {
                       "eye_bag": {
                         "anyOf": [
@@ -3114,6 +3423,20 @@
                         ],
                         "default": null
                       },
+                      "face_reshape": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides of the face. A per-side key (`face_reshape_left` / `face_reshape_right`) overrides this value for that side; a per-side `0` means that side is left unchanged."
+                      },
                       "face_reshape_left": {
                         "anyOf": [
                           {
@@ -3153,6 +3476,20 @@
                         ],
                         "default": null
                       },
+                      "chin_reshape": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides of the chin. A per-side key (`chin_reshape_left` / `chin_reshape_right`) overrides this value for that side; a per-side `0` means that side is left unchanged."
+                      },
                       "chin_reshape_left": {
                         "anyOf": [
                           {
@@ -3191,6 +3528,20 @@
                           }
                         ],
                         "default": null
+                      },
+                      "eye_size": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both eyes. A per-side key (`eye_size_left` / `eye_size_right`) overrides this value for that side; a per-side `0` means that side is left unchanged."
                       },
                       "eye_size_left": {
                         "anyOf": [
@@ -3420,8 +3771,10 @@
                       {
                         "cheekbones": 0,
                         "chin_length": 0,
+                        "chin_reshape": 0,
                         "chin_reshape_left": 0,
                         "chin_reshape_right": 0,
+                        "face_reshape": 0,
                         "face_reshape_left": 0,
                         "face_reshape_right": 0,
                         "face_width": 0,
@@ -3534,6 +3887,20 @@
                         ],
                         "default": null
                       },
+                      "face_reshape": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides of the face. A per-side key (`face_reshape_left` / `face_reshape_right`) overrides this value for that side; a per-side `0` means that side is left unchanged."
+                      },
                       "face_reshape_left": {
                         "anyOf": [
                           {
@@ -3573,6 +3940,20 @@
                         ],
                         "default": null
                       },
+                      "chin_reshape": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both sides of the chin. A per-side key (`chin_reshape_left` / `chin_reshape_right`) overrides this value for that side; a per-side `0` means that side is left unchanged."
+                      },
                       "chin_reshape_left": {
                         "anyOf": [
                           {
@@ -3611,6 +3992,20 @@
                           }
                         ],
                         "default": null
+                      },
+                      "eye_size": {
+                        "anyOf": [
+                          {
+                            "maximum": 100,
+                            "minimum": -100,
+                            "type": "integer"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "default": null,
+                        "description": "Applies to both eyes. A per-side key (`eye_size_left` / `eye_size_right`) overrides this value for that side; a per-side `0` means that side is left unchanged."
                       },
                       "eye_size_left": {
                         "anyOf": [
@@ -3840,8 +4235,10 @@
                       {
                         "cheekbones": 0,
                         "chin_length": 0,
+                        "chin_reshape": 0,
                         "chin_reshape_left": 0,
                         "chin_reshape_right": 0,
+                        "face_reshape": 0,
                         "face_reshape_left": 0,
                         "face_reshape_right": 0,
                         "face_width": 0,
@@ -15317,6 +15714,7 @@
                   "AI-Abs-Filter",
                   "AI-Aging-Simulation",
                   "AI-Avatar-Generator",
+                  "AI-Nail-Transfer",
                   "AI-Smile",
                   "AI-Studio-Generator",
                   "AI-Bag-Virtual-Try-On",
@@ -15420,6 +15818,7 @@
               "AI-Abs-Filter",
               "AI-Aging-Simulation",
               "AI-Avatar-Generator",
+              "AI-Nail-Transfer",
               "AI-Smile",
               "AI-Studio-Generator",
               "AI-Bag-Virtual-Try-On",
@@ -15564,6 +15963,7 @@
               "AI-Abs-Filter",
               "AI-Aging-Simulation",
               "AI-Avatar-Generator",
+              "AI-Nail-Transfer",
               "AI-Smile",
               "AI-Studio-Generator",
               "AI-Bag-Virtual-Try-On",
