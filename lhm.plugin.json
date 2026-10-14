@@ -613,7 +613,7 @@
     {
       "name": "AI-Beard-Style-Generator",
       "title": "Ai Beard Style Generator",
-      "description": "AI Simulation for Men's Beard Styles\nThe AI algorithm also empowers men to have the complete freedom to virtualy try different beard styles with the highly sophisticated beard simulation technology, including trim beard, stubble beard, full beard, circle beard, mustache, goatee, and others.\nShoppers can also see before and after results, without the commitment of putting a razor to the skin.\nThe beard filters include mustache, short box, ducktail, circle and a dozen more.",
+      "description": "AI Simulation for Men's Beard Styles\nThe AI algorithm also empowers men to have the complete freedom to virtually try different beard styles with the highly sophisticated beard simulation technology, including trim beard, stubble beard, full beard, circle beard, mustache, goatee, and others.\nShoppers can also see before and after results, without the commitment of putting a razor to the skin.\nThe beard filters include mustache, short box, ducktail, circle and a dozen more.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -5352,7 +5352,7 @@
     {
       "name": "AI-Wavy-Hair-Virtual-Try-On",
       "title": "Ai Wavy Hair Virtual Try On",
-      "description": "Whether you're dreaming of bouncy ringlets, loose waves, or a bold curly statement, the YouCam API’s curly hair filter lets you experiment with a fresh, fabulous hairstyle in seconds—all from the comfort of home.\nWhether you’re testing a soft wave or a wild afro, YouCam delivers precision and realism that other tools can’t match. It’s perfect for anyone wanting to experiment nobel hairstyle risk-free and make people look forward to their next salon visit.\nSuggestions for How to Shoot:",
+      "description": "Whether you're dreaming of bouncy ringlets, loose waves, or a bold curly statement, the YouCam API’s curly hair filter lets you experiment with a fresh, fabulous hairstyle in seconds—all from the comfort of home.\nWhether you're trying a soft wave or a bold afro, YouCam delivers a level of precision and realism that sets it apart. It's the ideal tool for exploring new hairstyles with confidence before your next salon visit.\nSuggestions for How to Shoot:",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -6073,112 +6073,6 @@
             "anyOf": [
               {
                 "properties": {
-                  "src_file_url": {
-                    "description": "Url of the file to run task. The url should be publicly accessible.",
-                    "examples": [
-                      "https://example.com/selfie.jpg"
-                    ],
-                    "type": "string"
-                  },
-                  "ref_file_url": {
-                    "description": "Url of the reference file to run task. The url should be publicly accessible.",
-                    "examples": [
-                      "https://example.com/reference.jpg"
-                    ],
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "src_file_url",
-                  "ref_file_url"
-                ],
-                "type": "object"
-              },
-              {
-                "properties": {
-                  "src_file_url": {
-                    "description": "Url of the file to run task. The url should be publicly accessible.",
-                    "examples": [
-                      "https://example.com/selfie.jpg"
-                    ],
-                    "type": "string"
-                  },
-                  "ref_file_id": {
-                    "description": "ID of the reference file to run task. File ID from upload file API.",
-                    "examples": [
-                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
-                    ],
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "src_file_url",
-                  "ref_file_id"
-                ],
-                "type": "object"
-              },
-              {
-                "properties": {
-                  "src_file_id": {
-                    "description": "ID of file to run task. File ID from upload file API.",
-                    "examples": [
-                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
-                    ],
-                    "type": "string"
-                  },
-                  "ref_file_url": {
-                    "description": "Url of the reference file to run task. The url should be publicly accessible.",
-                    "examples": [
-                      "https://example.com/reference.jpg"
-                    ],
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "src_file_id",
-                  "ref_file_url"
-                ],
-                "type": "object"
-              },
-              {
-                "properties": {
-                  "src_file_id": {
-                    "description": "ID of file to run task. File ID from upload file API.",
-                    "examples": [
-                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
-                    ],
-                    "type": "string"
-                  },
-                  "ref_file_id": {
-                    "description": "ID of the reference file to run task. File ID from upload file API.",
-                    "examples": [
-                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
-                    ],
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "src_file_id",
-                  "ref_file_id"
-                ],
-                "type": "object"
-              },
-              {
-                "properties": {
-                  "src_file_url": {
-                    "description": "Url of the file to run task. The url should be publicly accessible.",
-                    "examples": [
-                      "https://example.com/selfie.jpg"
-                    ],
-                    "type": "string"
-                  },
-                  "template_id": {
-                    "description": "ID of the template. List predefined templates first, and use the id of a template.",
-                    "examples": [
-                      "good_template_001"
-                    ],
-                    "type": "string"
-                  },
                   "hair_color": {
                     "anyOf": [
                       {
@@ -6193,7 +6087,177 @@
                       }
                     ],
                     "default": "ref",
-                    "description": "Specifies the hair color of the output image (source/reference), default reference color. <br><b>*only support when using template, custom reference image is always using reference hair color.</b>"
+                    "description": "Specifies the hair color of the output image (source/reference), default reference color."
+                  },
+                  "src_file_url": {
+                    "description": "Url of the file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/selfie.jpg"
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_url": {
+                    "description": "Url of the reference file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/reference.jpg"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_url",
+                  "ref_file_url"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "hair_color": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "ref",
+                          "src"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": "ref",
+                    "description": "Specifies the hair color of the output image (source/reference), default reference color."
+                  },
+                  "src_file_url": {
+                    "description": "Url of the file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/selfie.jpg"
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_id": {
+                    "description": "ID of the reference file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_url",
+                  "ref_file_id"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "hair_color": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "ref",
+                          "src"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": "ref",
+                    "description": "Specifies the hair color of the output image (source/reference), default reference color."
+                  },
+                  "src_file_id": {
+                    "description": "ID of file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_url": {
+                    "description": "Url of the reference file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/reference.jpg"
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_id",
+                  "ref_file_url"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "hair_color": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "ref",
+                          "src"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": "ref",
+                    "description": "Specifies the hair color of the output image (source/reference), default reference color."
+                  },
+                  "src_file_id": {
+                    "description": "ID of file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  },
+                  "ref_file_id": {
+                    "description": "ID of the reference file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "src_file_id",
+                  "ref_file_id"
+                ],
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "hair_color": {
+                    "anyOf": [
+                      {
+                        "enum": [
+                          "ref",
+                          "src"
+                        ],
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "default": "ref",
+                    "description": "Specifies the hair color of the output image (source/reference), default reference color."
+                  },
+                  "src_file_url": {
+                    "description": "Url of the file to run task. The url should be publicly accessible.",
+                    "examples": [
+                      "https://example.com/selfie.jpg"
+                    ],
+                    "type": "string"
+                  },
+                  "template_id": {
+                    "description": "ID of the template. List predefined templates first, and use the id of a template.",
+                    "examples": [
+                      "good_template_001"
+                    ],
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -6204,20 +6268,6 @@
               },
               {
                 "properties": {
-                  "src_file_id": {
-                    "description": "ID of file to run task. File ID from upload file API.",
-                    "examples": [
-                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
-                    ],
-                    "type": "string"
-                  },
-                  "template_id": {
-                    "description": "ID of the template. List predefined templates first, and use the id of a template.",
-                    "examples": [
-                      "good_template_001"
-                    ],
-                    "type": "string"
-                  },
                   "hair_color": {
                     "anyOf": [
                       {
@@ -6232,7 +6282,21 @@
                       }
                     ],
                     "default": "ref",
-                    "description": "Specifies the hair color of the output image (source/reference), default reference color. <br><b>*only support when using template, custom reference image is always using reference hair color.</b>"
+                    "description": "Specifies the hair color of the output image (source/reference), default reference color."
+                  },
+                  "src_file_id": {
+                    "description": "ID of file to run task. File ID from upload file API.",
+                    "examples": [
+                      "pfNK5PuRe0MrwLHcGA3DOmB1ahwfXTbYHjv+KoBIxbE="
+                    ],
+                    "type": "string"
+                  },
+                  "template_id": {
+                    "description": "ID of the template. List predefined templates first, and use the id of a template.",
+                    "examples": [
+                      "good_template_001"
+                    ],
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -15647,7 +15711,7 @@
     },
     {
       "name": "upload_file",
-      "description": "Upload base64-encoded media files to the YouCam API and return file_id(s).",
+      "description": "Upload base64-encoded media files to the YouCam API and return file_id(s).\n\nIf task_type is omitted, files are uploaded via the generic file API\n(POST /s2s/v2.0/file) rather than a task-specific upload path.",
       "inputSchema": {
         "type": "object",
         "properties": {
@@ -15659,7 +15723,14 @@
             "type": "array"
           },
           "task_type": {
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "required": [
@@ -15769,7 +15840,8 @@
                   "AI-Image-Generator-Text-to-Image",
                   "AI-Video-Generator-Text-to-Video",
                   "AI-Video-Enhancer",
-                  "AI-Video-Style-Transfer"
+                  "AI-Video-Style-Transfer",
+                  "AI-Watermark-Removal"
                 ],
                 "type": "string"
               },
@@ -15873,7 +15945,8 @@
               "AI-Image-Generator-Text-to-Image",
               "AI-Video-Generator-Text-to-Video",
               "AI-Video-Enhancer",
-              "AI-Video-Style-Transfer"
+              "AI-Video-Style-Transfer",
+              "AI-Watermark-Removal"
             ],
             "type": "string"
           },
@@ -16018,7 +16091,8 @@
               "AI-Image-Generator-Text-to-Image",
               "AI-Video-Generator-Text-to-Video",
               "AI-Video-Enhancer",
-              "AI-Video-Style-Transfer"
+              "AI-Video-Style-Transfer",
+              "AI-Watermark-Removal"
             ],
             "type": "string"
           }
@@ -16179,6 +16253,219 @@
           ],
           "tags": [],
           "version": "v2.0"
+        }
+      }
+    },
+    {
+      "name": "Get-Unit-Info",
+      "title": "Get Unit Info",
+      "description": "Get the current unit balance for this account, including each unit's type, amount, and expiry.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "error_message": {
+                    "description": "Detailed description of error",
+                    "type": "string"
+                  },
+                  "request_id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "error_message"
+                ],
+                "type": "object"
+              }
+            ]
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "x-fastmcp-wrap-result": true
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      },
+      "_meta": {
+        "fastmcp": {
+          "versions": [
+            "v2.0"
+          ],
+          "tags": [],
+          "version": "v2.0"
+        }
+      }
+    },
+    {
+      "name": "Get-Unit-History",
+      "title": "Get Unit History",
+      "description": "View the unit usage history for this account, such as units consumed or granted per task/order.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "request": {
+            "properties": {
+              "page_size": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "examples": [
+                  20
+                ]
+              },
+              "starting_token": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "examples": [
+                  "73a3c9e69b89"
+                ]
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "properties": {
+                  "error_message": {
+                    "description": "Detailed description of error",
+                    "type": "string"
+                  },
+                  "request_id": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "error_message"
+                ],
+                "type": "object"
+              }
+            ]
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "x-fastmcp-wrap-result": true
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      },
+      "_meta": {
+        "fastmcp": {
+          "versions": [
+            "v2.0"
+          ],
+          "tags": [],
+          "version": "v2.0"
+        }
+      }
+    },
+    {
+      "name": "AI-Makeup-Virtual-Try-On-Pattern-Name",
+      "title": "Ai Makeup Virtual Try On Pattern Name",
+      "description": "Get AI Makeup VTO available pattern names.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "categories": {
+            "description": "List of makeup VTO categories.",
+            "items": {
+              "enum": [
+                "blush",
+                "bronzer",
+                "contour",
+                "eyebrows",
+                "eyeliner",
+                "eyeshadow",
+                "eyelashes",
+                "lipshape",
+                "lipliner",
+                "highlighter"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "categories"
+        ],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      },
+      "_meta": {
+        "fastmcp": {
+          "tags": []
         }
       }
     }
